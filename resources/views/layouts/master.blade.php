@@ -57,6 +57,14 @@
                                 <li><a href="{{ route('members.index') }}">All Members</a></li>
                                 <li><a href="{{ route('members.create') }}">Add Member</a></li>
                             </ul>
+                            </li>
+                            <li>
+                            <a href="javascript:void(0)" aria-expanded="true"><i class="ti-layout-sidebar-left"></i><span>Posts</span></a>
+                            <ul class="collapse">
+                                <li><a href="{{ route('posts.index') }}">All Posts</a></li>
+                                <li><a href="{{ route('posts.create') }}">Add Post</a></li>
+                            </ul>
+                            </li>
                         </ul>
                     </nav>
                 </div>
