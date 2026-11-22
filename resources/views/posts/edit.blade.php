@@ -1,17 +1,40 @@
 @extends('layouts.master')
+
 @section('content')
-    <h1>Edit Post</h1>
-    <form action="{{ route('posts.update', $posts) }}" method="POST">
-        @csrf
-        @method('PUT')
+<div class="container-fluid posts-page">
+    <div class="posts-page-header">
         <div>
-            <label for="title">Title:</label>
-            <input type="text" name="title" id="title" value="{{ $posts->title }}" required>
+            <h1>Edit post</h1>
+            <p>Update the post content or change its publication date.</p>
         </div>
-        <div>
-            <label for="content">Content:</label>
-            <textarea name="content" id="content" required>{{ $posts->content }}</textarea>
+        <a href="{{ route('posts.index') }}" class="btn btn-light border">
+            <i class="ti-arrow-left me-1" aria-hidden="true"></i> Back to posts
+        </a>
+    </div>
+
+    @if ($errors->any())
+        <div class="alert alert-danger" role="alert">
+            <strong>Please review the form.</strong> Some details need your attention.
         </div>
-        <button type="submit">Update Post</button>
-    </form>
+    @endif
+
+    <div class="card posts-form-card">
+        <div class="card-header">
+            <i class="ti-write me-2" aria-hidden="true"></i> Post information
+        </div>
+        <div class="card-body">
+            <form action="{{ route('posts.update', $post) }}" method="POST">
+                @method('PUT')
+                @include('posts._form')
+
+                <div class="posts-form-footer">
+                    <a href="{{ route('posts.index') }}" class="btn btn-light border">Cancel</a>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="ti-check me-1" aria-hidden="true"></i> Save changes
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 @endsection

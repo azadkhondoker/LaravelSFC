@@ -101,6 +101,25 @@
     </div>
 
     <div class="member-field">
+        <label for="installment_amount">Fixed installment amount <span class="text-danger">*</span></label>
+        <input
+            id="installment_amount"
+            type="number"
+            name="installment_amount"
+            value="{{ old('installment_amount', $member->installment_amount ?? '') }}"
+            class="form-control @error('installment_amount') is-invalid @enderror"
+            min="0.01"
+            step="0.01"
+            inputmode="decimal"
+            required
+        >
+        <small class="form-text">This is the only amount accepted for this member's installment deposits.</small>
+        @error('installment_amount')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
+
+    <div class="member-field">
         <label for="status">Membership status <span class="text-danger">*</span></label>
         <select
             id="status"

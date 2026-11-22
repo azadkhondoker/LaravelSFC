@@ -287,3 +287,574 @@
         padding: 1rem;
     }
 }
+
+.posts-page {
+    --posts-ink: #263445;
+    --posts-muted: #7d8998;
+    --posts-line: #edf0f4;
+}
+
+.posts-page-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.posts-page-header h1 {
+    margin: 0 0 .35rem;
+    color: var(--posts-ink);
+    font-size: 1.55rem;
+    font-weight: 700;
+}
+
+.posts-page-header p {
+    margin: 0;
+    color: var(--posts-muted);
+}
+
+.posts-form-card,
+.posts-list-card {
+    overflow: hidden;
+    border: 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(35, 54, 80, .07);
+}
+
+.posts-form-card .card-header,
+.posts-list-card .card-header {
+    padding: 1.15rem 1.5rem;
+    border-bottom: 1px solid var(--posts-line);
+    background: #fff;
+    color: var(--posts-ink);
+    font-weight: 600;
+}
+
+.posts-form-card .card-body {
+    padding: 1.5rem;
+}
+
+.posts-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+.posts-field label {
+    display: block;
+    margin-bottom: .45rem;
+    color: var(--posts-ink);
+    font-size: .875rem;
+    font-weight: 600;
+}
+
+.posts-field .form-control {
+    min-height: 46px;
+    border-color: #dce3eb;
+    border-radius: 8px;
+    box-shadow: none;
+}
+
+.posts-field textarea.form-control {
+    min-height: 180px;
+}
+
+.posts-field .form-control:focus {
+    border-color: #5878ef;
+    box-shadow: 0 0 0 3px rgba(88, 120, 239, .12);
+}
+
+.posts-field .form-text {
+    margin-top: .4rem;
+    color: var(--posts-muted);
+    font-size: .78rem;
+}
+
+.posts-field-full {
+    grid-column: 1 / -1;
+}
+
+.posts-form-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: .75rem;
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--posts-line);
+}
+
+.posts-list-card .card-header h2 {
+    margin: 0;
+    color: var(--posts-ink);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.posts-table {
+    margin: 0;
+    vertical-align: middle;
+}
+
+.posts-table thead th {
+    padding: .9rem 1.25rem;
+    border-bottom: 1px solid var(--posts-line);
+    background: #f8f9fb;
+    color: var(--posts-muted);
+    font-size: .73rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.posts-table tbody td {
+    padding: 1rem 1.25rem;
+    border-color: var(--posts-line);
+    color: #4a586a;
+    font-size: .875rem;
+}
+
+.post-title,
+.post-excerpt {
+    display: block;
+}
+
+.post-title {
+    color: var(--posts-ink);
+    font-weight: 600;
+}
+
+.post-open-button {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    text-align: left;
+}
+
+.post-open-button:hover .post-title {
+    color: #405fd0;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.post-open-button:focus-visible {
+    border-radius: 4px;
+    outline: 2px solid #5878ef;
+    outline-offset: 4px;
+}
+
+.post-excerpt {
+    max-width: 560px;
+    margin-top: .25rem;
+    color: var(--posts-muted);
+    font-size: .8rem;
+}
+
+.post-details-modal .modal-content {
+    overflow: hidden;
+    border: 0;
+    border-radius: 12px;
+    box-shadow: 0 16px 48px rgba(35, 54, 80, .2);
+}
+
+.installment-error-modal {
+    --posts-ink: #263445;
+    --posts-muted: #7d8998;
+    --posts-line: #edf0f4;
+}
+
+.post-details-modal .modal-header {
+    align-items: flex-start;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--posts-line);
+}
+
+.post-modal-eyebrow {
+    display: block;
+    margin-bottom: .35rem;
+    color: var(--posts-muted);
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+.post-details-modal .modal-title {
+    color: var(--posts-ink);
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.post-details-modal .modal-body {
+    padding: 1.5rem;
+}
+
+.post-modal-date {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 1.25rem;
+    padding: .45rem .75rem;
+    border-radius: 999px;
+    background: #f3f5ff;
+    color: #405fd0;
+    font-size: .82rem;
+    font-weight: 600;
+}
+
+.post-modal-content {
+    margin: 0;
+    color: #4a586a;
+    line-height: 1.75;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.post-details-modal .modal-footer {
+    padding: .9rem 1.5rem;
+    border-top: 1px solid var(--posts-line);
+}
+
+.post-date {
+    color: var(--posts-ink) !important;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.post-added {
+    white-space: nowrap;
+}
+
+.post-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: .4rem;
+}
+
+.post-actions .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    border-radius: 7px;
+}
+
+.posts-empty {
+    padding: 3rem 1rem !important;
+    text-align: center;
+}
+
+.posts-empty strong,
+.posts-empty span {
+    display: block;
+}
+
+.posts-empty strong {
+    margin-bottom: .35rem;
+    color: var(--posts-ink);
+}
+
+@media (max-width: 767px) {
+    .posts-page-header {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .posts-page-header .btn {
+        align-self: flex-start;
+    }
+
+    .posts-form-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .posts-field-full {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 575px) {
+    .posts-form-card .card-body {
+        padding: 1rem;
+    }
+}
+
+.installment-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.savings-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.savings-summary-grid .installment-summary-card {
+    margin: 0;
+}
+
+.savings-summary-grid .installment-summary-card small {
+    color: #7d8998;
+    font-size: .78rem;
+}
+
+.savings-investment-note {
+    border: 0;
+    border-radius: 8px;
+    color: #405066;
+}
+
+.installment-summary-card {
+    gap: .35rem;
+    padding: 1.15rem 1.35rem;
+    border: 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(35, 54, 80, .07);
+}
+
+.installment-summary-label,
+.member-profile-label {
+    display: block;
+    color: #7d8998;
+    font-size: .78rem;
+}
+
+.installment-summary-card strong {
+    color: #263445;
+    font-size: 1.15rem;
+}
+
+.installment-member-card {
+    margin-bottom: 1.25rem;
+}
+
+.member-profile-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+.member-profile-grid strong {
+    display: block;
+    margin-top: .2rem;
+    color: #263445;
+    font-size: .9rem;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+.installment-deposit-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+.installment-total {
+    color: #263445 !important;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.member-status-deleted {
+    background: #fff1e8;
+    color: #a64b12;
+}
+
+.installment-total-preview {
+    margin-top: 1rem;
+    color: #7d8998;
+}
+
+.receipt-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: .75rem;
+    margin-bottom: 1rem;
+}
+
+.receipt-card {
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+.receipt-card .receipt-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.5rem;
+}
+
+.receipt-eyebrow,
+.receipt-label,
+.receipt-subtext {
+    display: block;
+    color: #7d8998;
+    font-size: .78rem;
+}
+
+.receipt-eyebrow {
+    margin-bottom: .35rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+.receipt-header h1 {
+    margin: 0 0 .35rem;
+    color: #263445;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.receipt-number {
+    color: #4a586a;
+    font-size: .85rem;
+}
+
+.receipt-paid-badge {
+    padding: .4rem .8rem;
+    border-radius: 999px;
+    background: #e8f7ef;
+    color: #17804a;
+    font-size: .8rem;
+    font-weight: 700;
+}
+
+.receipt-details-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.receipt-details-grid strong {
+    display: block;
+    margin-top: .2rem;
+    color: #263445;
+    font-size: .9rem;
+}
+
+.receipt-subtext {
+    margin-top: .15rem;
+}
+
+.receipt-table-wrap {
+    border: 1px solid #edf0f4;
+    border-radius: 8px;
+}
+
+.receipt-table {
+    margin: 0;
+}
+
+.receipt-table tfoot th {
+    padding: .9rem 1.25rem;
+    border-top: 1px solid #edf0f4;
+    color: #263445;
+}
+
+.receipt-note {
+    margin-top: 1.25rem;
+}
+
+.receipt-note p {
+    margin: .25rem 0 0;
+    color: #4a586a;
+    white-space: pre-wrap;
+}
+
+.receipt-footnote {
+    margin: 1.75rem 0 0;
+    padding-top: 1rem;
+    border-top: 1px solid #edf0f4;
+    color: #7d8998;
+    font-size: .78rem;
+    text-align: center;
+}
+
+@media (max-width: 767px) {
+    .installment-summary-grid,
+    .savings-summary-grid,
+    .member-profile-grid,
+    .installment-deposit-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .receipt-details-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .installment-note-field {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 575px) {
+    .installment-summary-grid,
+    .savings-summary-grid,
+    .member-profile-grid,
+    .installment-deposit-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .receipt-details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .receipt-card .card-header {
+        align-items: flex-start;
+    }
+
+    .installment-note-field {
+        grid-column: auto;
+    }
+}
+
+@media print {
+    @page {
+        margin: 15mm;
+    }
+
+    .sidebar-menu,
+    .header-area,
+    .page-title-area,
+    .receipt-actions,
+    footer,
+    .offset-area,
+    .skip-link {
+        display: none !important;
+    }
+
+    .page-container,
+    .main-content,
+    .main-content-inner {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .receipt-card {
+        max-width: none;
+        border: 0;
+        box-shadow: none;
+    }
+
+    .receipt-card .card-header,
+    .receipt-card .card-body {
+        padding: 0 0 1rem;
+    }
+
+    .receipt-table-wrap {
+        overflow: visible;
+    }
+}

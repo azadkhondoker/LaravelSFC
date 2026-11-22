@@ -21,6 +21,13 @@
         </div>
     @endif
 
+    @if (session('error'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{ session('error') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
     <div class="card members-card">
         <div class="card-header">
             <div>
@@ -90,6 +97,16 @@
                             </td>
                             <td>
                                 <div class="member-actions">
+                                    @can('view members')
+                                        <a
+                                            href="{{ route('members.show', $member) }}"
+                                            class="btn btn-light border text-primary"
+                                            aria-label="View {{ $member->name }}"
+                                            title="View member profile"
+                                        >
+                                            <i class="ti-eye" aria-hidden="true"></i>
+                                        </a>
+                                    @endcan
                                     @can('edit members')
                                         <a
                                             href="{{ route('members.edit', $member) }}"
@@ -104,7 +121,7 @@
                                         <form
                                             action="{{ route('members.destroy', $member) }}"
                                             method="POST"
-                                            onsubmit="return confirm('Delete this member? This action cannot be undone.');"
+                                            onsubmit="return confirm('Move this member to Deleted Members? You can restore them later.');"
                                         >
                                             @csrf
                                             @method('DELETE')

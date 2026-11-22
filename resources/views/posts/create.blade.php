@@ -1,17 +1,39 @@
 @extends('layouts.master')
 
 @section('content')
-    <h1>Create Post</h1>
-    <form action="{{ route('posts.store') }}" method="POST">
-        @csrf
+<div class="container-fluid posts-page">
+    <div class="posts-page-header">
         <div>
-            <label for="title">Title:</label>
-            <input type="text" name="title" id="title" required>
+            <h1>Create post</h1>
+            <p>Write a post and choose the date it was published.</p>
         </div>
-        <div>
-            <label for="content">Content:</label>
-            <textarea name="content" id="content" required></textarea>
+        <a href="{{ route('posts.index') }}" class="btn btn-light border">
+            <i class="ti-arrow-left me-1" aria-hidden="true"></i> Back to posts
+        </a>
+    </div>
+
+    @if ($errors->any())
+        <div class="alert alert-danger" role="alert">
+            <strong>Please review the form.</strong> Some details need your attention.
         </div>
-        <button type="submit">Create Post</button>
-    </form>
+    @endif
+
+    <div class="card posts-form-card">
+        <div class="card-header">
+            <i class="ti-write me-2" aria-hidden="true"></i> Post information
+        </div>
+        <div class="card-body">
+            <form action="{{ route('posts.store') }}" method="POST">
+                @include('posts._form')
+
+                <div class="posts-form-footer">
+                    <a href="{{ route('posts.index') }}" class="btn btn-light border">Cancel</a>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="ti-check me-1" aria-hidden="true"></i> Create post
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 @endsection

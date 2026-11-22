@@ -33,6 +33,7 @@ class MemberRequest extends FormRequest
             'phone' => ['nullable', 'string', 'max:20', 'regex:/^\+?[0-9\s().-]+$/'],
             'address' => 'nullable|string',
             'joining_date' => 'required|date',
+            'installment_amount' => 'required|numeric|decimal:0,2|min:0.01|max:9999999999.99',
             'status' => 'required|in:active,inactive',
         ];
     }

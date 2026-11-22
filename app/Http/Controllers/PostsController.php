@@ -12,7 +12,9 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $posts = posts::all();
+        $posts = posts::orderByDesc('post_date')
+            ->orderByDesc('created_at')
+            ->get();
         return view('posts.index', compact('posts'));
     }
 
@@ -32,6 +34,7 @@ class PostsController extends Controller
        $data = $request->validate([
             'title' => 'required|max:255',
             'content'  => 'required',
+           'post_date' => 'required|date',
         ]);
         posts::create($data);
         return redirect()->route('posts.index')->with('success', 'Post created successfully.');
@@ -48,30 +51,31 @@ class PostsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(posts $posts)
+    public function edit(posts $post)
     {
-        return view('posts.edit', compact('posts'));
+        return view('posts.edit', compact('post'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, posts $posts)
+    public function update(Request $request, posts $post)
     {
-        $data = $request->revalidate([
+        $data = $request->validate([
             'title' => 'required|string|max:255',
             'content' => 'required|string',
+            'post_date' => 'required|date',
         ]);
-        $posts->update-($data);
+        $post->update($data);
         return redirect()->route('posts.index')->with('success', 'Post updated successfully.');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(posts $posts)
+    public function destroy(posts $post)
     {
-        $posts->delete();
+        $post->delete();
         return redirect()->route('posts.index')->with('success', 'Post deleted successfully.');
     }
 }
