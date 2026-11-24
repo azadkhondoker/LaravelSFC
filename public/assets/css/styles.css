@@ -8,10 +8,10 @@
     Version: 2.0
 
 ----------------------------------------------
-    
+
     CSS INDEX
     ===================
-  
+
     1. Core Css
     2. Dashboard One
         2.1 Sidebar Menu
@@ -135,7 +135,7 @@ a:hover {
     height: 100vh;
     width: 280px;
     overflow: hidden;
-    background: var(--bg-sidebar);
+    background: #0F172A;
     box-shadow: 2px 0 32px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease 0s;
 }
@@ -159,7 +159,7 @@ a:hover {
 
 .sidebar-header {
     padding: 19px 32px 20px;
-    background: var(--bg-sidebar);
+    background: #0F172A;
     border-bottom: 1px solid #343e50;
 }
 .sidebar-menu .logo{
@@ -238,7 +238,7 @@ a:hover {
 
 .metismenu li:hover>a,
 .metismenu li.active>a {
-    color: #fff;
+    color: #CBD5E1;
 }
 
 .metismenu li:hover>a i,
@@ -656,7 +656,7 @@ ul.breadcrumbs {
     display: block;
     font-size: 14px;
     font-weight: 400;
-    color: var(--primary-color);
+    color: #1E40AF;
     letter-spacing: 0;
     margin-right: 16px;
     position: relative;
@@ -681,7 +681,7 @@ ul.breadcrumbs {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    background: linear-gradient(to right, var(--primary-gradient-start) 0%, var(--primary-gradient-end) 100%);
+    background: #1E40AF;
     padding: 17px 38px;
     position: relative;
 }
@@ -1047,7 +1047,7 @@ table.dbkit-table tr td {
 
 .trd-history-tabs ul li a:hover,
 .trd-history-tabs ul li a.active {
-    border-bottom: 2px solid #731ffd;
+border-bottom: 2px solid #731ffd;
     padding-bottom: 7px;
     color: var(--text-medium);
 }
@@ -1238,7 +1238,7 @@ table.dbkit-table tr td {
 
 .team-search input::-moz-placeholder {
     color: #e1e1e1;
-}
+}               
 
 .team-search input:-ms-input-placeholder {
     color: #e1e1e1;

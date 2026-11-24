@@ -5,30 +5,21 @@
     <div class="members-page-header">
         <div>
             <h1>Savings</h1>
-            <p>Track total member savings from recorded installment deposits.</p>
-        </div>
     </div>
 
     <div class="savings-summary-grid">
         <div class="card installment-summary-card savings-total-card">
             <span class="installment-summary-label">Total savings</span>
             <strong>{{ number_format((float) $totalSavings, 2) }}</strong>
-            <small>Combined member installment deposits</small>
         </div>
         <div class="card installment-summary-card">
             <span class="installment-summary-label">Members with deposits</span>
             <strong>{{ number_format($membersWithDeposits) }}</strong>
-            <small>Includes archived members</small>
         </div>
         <div class="card installment-summary-card">
             <span class="installment-summary-label">Total deposits</span>
             <strong>{{ number_format($totalDeposits) }}</strong>
-            <small>Installment payments recorded</small>
         </div>
-    </div>
-
-    <div class="alert alert-info savings-investment-note" role="status">
-        Total savings currently reflects member deposits only. Investment categories and their profit/loss are not tracked yet.
     </div>
 
     <div class="card members-card">

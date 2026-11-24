@@ -5,7 +5,6 @@
     <div class="posts-page-header">
         <div>
             <h1>Posts</h1>
-            <p>Manage your posts and publication dates.</p>
         </div>
         <a href="{{ route('posts.create') }}" class="btn btn-primary">
             <i class="ti-plus me-1" aria-hidden="true"></i> Create post

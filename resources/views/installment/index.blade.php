@@ -5,8 +5,6 @@
     <div class="members-page-header">
         <div>
             <h1>Installments</h1>
-            <p>Every member appears here automatically. Open a member profile to record a deposit.</p>
-        </div>
     </div>
 
     <div class="card members-card">

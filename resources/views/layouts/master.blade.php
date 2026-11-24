@@ -3,9 +3,9 @@
 
 <head>
     <meta charset="utf-8">
-    <title>ICO Dashboard - SRTdash Admin</title>
+    <title>Member Management Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="ICO cryptocurrency dashboard with real-time market data, sales reports, and trading analytics.">
+    <meta name="description" content="Manage members, installment payments, savings, and notices.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -43,35 +43,30 @@
                 <div class="menu-inner">
                     <nav>
                         <ul class="metismenu" id="menu">
-                            <li class="active">
-                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-dashboard"></i><span>dashboard</span></a>
-                                <ul class="collapse">
-                                    <li class="active"><a href="index.html">ICO dashboard</a></li>
-                                    <li><a href="index2.html">Ecommerce dashboard</a></li>
-                                    <li><a href="index3.html">SEO dashboard</a></li>
-                                </ul>
+                            <li class="{{ request()->routeIs('dashboard') ? 'active' : '' }}">
+                                <a href="{{ route('dashboard') }}" aria-expanded="true"><i class="ti-dashboard"></i><span>Dashboard</span></a>
                             </li>
-                            <li>
-                            <a href="javascript:void(0)" aria-expanded="true"><i class="ti-layout-sidebar-left"></i><span>Members</span></a>
+                            <li class="{{ request()->routeIs('members.*') ? 'active' : '' }}">
+                            <a href="javascript:void(0)" aria-expanded="{{ request()->routeIs('members.*') ? 'true' : 'false' }}"><i class="ti-layout-sidebar-left"></i><span>Members</span></a>
                             <ul class="collapse">
-                                <li><a href="{{ route('members.index') }}">All Members</a></li>
-                                <li><a href="{{ route('members.create') }}">Add Member</a></li>
+                                <li class="{{ request()->routeIs('members.index') ? 'active' : '' }}"><a href="{{ route('members.index') }}">All Members</a></li>
+                                <li class="{{ request()->routeIs('members.create') ? 'active' : '' }}"><a href="{{ route('members.create') }}">Add Member</a></li>
                                 @can('view members')
-                                    <li><a href="{{ route('members.deleted') }}">Deleted Members</a></li>
+                                    <li class="{{ request()->routeIs('members.deleted') ? 'active' : '' }}"><a href="{{ route('members.deleted') }}">Deleted Members</a></li>
                                 @endcan
                             </ul>
                             </li>
-                            <li>
-                            <a href="javascript:void(0)" aria-expanded="true"><i class="ti-layout-sidebar-left"></i><span>Notice</span></a>
+                            <li class="{{ request()->routeIs('posts.*') ? 'active' : '' }}">
+                            <a href="javascript:void(0)" aria-expanded="{{ request()->routeIs('posts.*') ? 'true' : 'false' }}"><i class="ti-layout-sidebar-left"></i><span>Notice</span></a>
                             <ul class="collapse">
-                                <li><a href="{{ route('posts.index') }}">All Posts</a></li>
-                                <li><a href="{{ route('posts.create') }}">Add Post</a></li>
+                                <li class="{{ request()->routeIs('posts.index') ? 'active' : '' }}"><a href="{{ route('posts.index') }}">All Posts</a></li>
+                                <li class="{{ request()->routeIs('posts.create') ? 'active' : '' }}"><a href="{{ route('posts.create') }}">Add Post</a></li>
                             </ul>
                             </li>
-                            <li>
+                            <li class="{{ request()->routeIs('installments.*') ? 'active' : '' }}">
                                 <a href="{{ route('installments.index') }}"><i class="ti-layout-sidebar-left"></i><span>Installments</span></a>
                             </li>
-                            <li>
+                            <li class="{{ request()->routeIs('savings.*') ? 'active' : '' }}">
                                 <a href="{{ route('savings.index') }}"><i class="ti-layout-sidebar-left"></i><span>Savings Amount</span></a>
                             </li>
                         </ul>
@@ -256,15 +251,15 @@
                         <div class="breadcrumbs-area clearfix">
                             <h1 class="page-title float-start">Dashboard</h1>
                             <ul class="breadcrumbs float-start">
-                                <li><a href="index.html">Home</a></li>
+                                <li><a href="{{ route('dashboard') }}">Home</a></li>
                                 <li><span>Dashboard</span></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-sm-6 clearfix">
                         <div class="user-profile float-end">
-                            <picture><source srcset="{{ asset('assets/images/author/avatar.avif') }}" type="image/avif"><img class="avatar user-thumb" src="{{ asset('assets/images/author/avatar.png') }}" alt="avatar"></picture>
-                            <h4 class="user-name dropdown-toggle" data-bs-toggle="dropdown">Aigars Silkalns <i class="fa-solid fa-angle-down"></i></h4>
+                            <picture><source srcset="{{ asset('assets/images/admin/azad.jpeg') }}" type="image/avif"><img class="avatar user-thumb" src="{{ asset('assets/images/author/avatar.png') }}" alt="avatar"></picture>
+                            <h4 class="user-name dropdown-toggle" data-bs-toggle="dropdown">{{ auth()->user()->name }} <i class="fa-solid fa-angle-down"></i></h4>
                             <div class="dropdown-menu user-dropdown">
                                 <a class="dropdown-item" href="profile.html"><i class="fa-solid fa-user"></i> My Profile</a>
                                 <a class="dropdown-item" href="notifications.html"><i class="fa-solid fa-envelope"></i> Inbox <span class="badge rounded-pill bg-primary ms-auto">3</span></a>
