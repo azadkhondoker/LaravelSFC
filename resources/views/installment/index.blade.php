@@ -3,8 +3,9 @@
 @section('content')
 <div class="container-fluid members-page">
     <div class="members-page-header">
-        <div>
+        <div class="content-head">
             <h1>Installments</h1>
+        </div>
     </div>
 
     <div class="card members-card">

@@ -3,14 +3,23 @@
 @section('content')
 <div class="container-fluid members-page savings-page">
     <div class="members-page-header">
-        <div>
+        <div class="content-head">
             <h1>Savings</h1>
+        </div>
     </div>
 
     <div class="savings-summary-grid">
         <div class="card installment-summary-card savings-total-card">
             <span class="installment-summary-label">Total savings</span>
             <strong>{{ number_format((float) $totalSavings, 2) }}</strong>
+        </div>
+        <div class="card installment-summary-card">
+            <span class="installment-summary-label">Invested amount</span>
+            <strong>{{ number_format($investedAmount / 100, 2) }}</strong>
+        </div>
+        <div class="card installment-summary-card savings-total-card">
+            <span class="installment-summary-label">Available savings</span>
+            <strong>{{ number_format($availableSavings / 100, 2) }}</strong>
         </div>
         <div class="card installment-summary-card">
             <span class="installment-summary-label">Members with deposits</span>

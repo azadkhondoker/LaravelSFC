@@ -1151,3 +1151,27 @@
         overflow: visible;
     }
 }
+
+.members-search .form-control {
+    height: 44px;
+}
+
+/**common css start **/
+.container-fluid{
+    padding-top: 50px !important;
+}
+
+.content-head{
+    padding-bottom: 20px;
+}
+
+.btn.btn-primary {
+    margin-bottom: 20px;
+    background-color: #1E40AF;
+}
+
+.btn.btn-primary:hover {
+    background-color: #1E3A8A;
+}
+
+/**common css end**/

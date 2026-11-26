@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid members-page">
     <div class="members-page-header">
-        <div>
+        <div class="content-head">
             <h1>Members</h1>
             <p>Manage member profiles, contact information, and membership status.</p>
         </div>

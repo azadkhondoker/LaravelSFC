@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Installment;
 use App\Models\Member;
 use Illuminate\Http\Request;
+use App\Services\InvestmentSavings;
 
 class SavingsController extends Controller
 {
@@ -13,7 +14,7 @@ class SavingsController extends Controller
         $this->middleware('permission:view members');
     }
 
-    public function index(Request $request)
+    public function index(Request $request, InvestmentSavings $fund)
     {
         $members = Member::withTrashed()
             ->withSum('installments', 'amount')
@@ -35,12 +36,19 @@ class SavingsController extends Controller
         $membersWithDeposits = Member::withTrashed()
             ->whereHas('installments')
             ->count();
+        $rawSavings = $fund->rawSavings();
+        $investedAmount = $fund->investedAmount();
+        $availableSavings = $fund->available();
+        $totalSavings = $fund->fromMinorUnits($rawSavings);
 
         return view('savings.index', compact(
             'members',
             'totalSavings',
             'totalDeposits',
             'membersWithDeposits',
+            'rawSavings',
+            'investedAmount',
+            'availableSavings',
         ));
     }
 }

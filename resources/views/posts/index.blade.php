@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid posts-page">
     <div class="posts-page-header">
-        <div>
+        <div class="content-head">
             <h1>Posts</h1>
         </div>
         <a href="{{ route('posts.create') }}" class="btn btn-primary">

@@ -36,7 +36,7 @@
         <div class="sidebar-menu">
             <div class="sidebar-header">
                 <div class="logo">
-                    <a href="{{ route('dashboard') }}"><picture><source srcset="{{ asset('assets/images/icon/logo.avif') }}" type="image/avif"><img src="{{ asset('assets/images/icon/logo.png') }}" alt="logo"></picture></a>
+                    <a href="{{ route('dashboard') }}"><picture><source srcset="{{ asset('assets/images/admin/logo.png') }}" type="image/avif"><img src="{{ asset('assets/assets/admin/images/icon/logo.png') }}" alt="logo"></picture></a>
                 </div>
             </div>
             <div class="main-menu">
@@ -68,6 +68,15 @@
                             </li>
                             <li class="{{ request()->routeIs('savings.*') ? 'active' : '' }}">
                                 <a href="{{ route('savings.index') }}"><i class="ti-layout-sidebar-left"></i><span>Savings Amount</span></a>
+                            </li>
+                            <li class="{{ request()->routeIs('investments.*') ? 'active' : '' }}">
+                                <a href="{{ route('investments.index') }}"><i class="ti-layout-sidebar-left"></i><span>Investments</span></a>
+                                <ul class="collapse">
+                                    <li class="{{ request()->routeIs('investments.loans.*') ? 'active' : '' }}"><a href="{{ route('investments.loans.index') }}">Loans</a></li>
+                                    <li class="{{ request()->routeIs('investments.clients.*') ? 'active' : '' }}"><a href="{{ route('investments.clients.index') }}">Loan clients</a></li>
+                                    <li class="{{ request()->routeIs('investments.land.*') ? 'active' : '' }}"><a href="{{ route('investments.land.index') }}">Land</a></li>
+                                    <li class="{{ request()->routeIs('investments.others.*') ? 'active' : '' }}"><a href="{{ route('investments.others.index') }}">Other investments</a></li>
+                                </ul>
                             </li>
                         </ul>
                     </nav>
