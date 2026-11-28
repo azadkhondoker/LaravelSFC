@@ -12,6 +12,7 @@ use App\Http\Controllers\LoanController;
 use App\Http\Controllers\LandInvestmentController;
 use App\Http\Controllers\OtherInvestmentController;
 use App\Http\Controllers\FinancialEntryController;
+use App\Http\Controllers\WithdrawalController;
 
 
 
@@ -24,6 +25,10 @@ Route::middleware('auth')->group(function () {
      Route::post('members/{member}/installments', [InstallmentController::class, 'store'])->name('members.installments.store');
      Route::get('installment-payments/{installmentPayment}/receipt', [InstallmentController::class, 'receipt'])->name('installment-payments.receipt');
      Route::get('savings', [SavingsController::class, 'index'])->name('savings.index');
+     Route::get('withdrawals', [WithdrawalController::class, 'index'])->name('withdrawals.index');
+     Route::post('withdrawals', [WithdrawalController::class, 'store'])->name('withdrawals.store');
+     Route::post('withdrawals/{withdrawal}/approve', [WithdrawalController::class, 'approve'])->name('withdrawals.approve');
+     Route::post('withdrawals/{withdrawal}/reject', [WithdrawalController::class, 'reject'])->name('withdrawals.reject');
      Route::resource('posts', PostsController::class);
      Route::get('investments', [InvestmentController::class, 'index'])->name('investments.index');
      Route::get('investments/financial-entries', [FinancialEntryController::class, 'index'])->name('investments.financial-entries.index');

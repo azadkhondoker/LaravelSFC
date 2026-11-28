@@ -69,6 +69,11 @@
                             <li class="{{ request()->routeIs('savings.*') ? 'active' : '' }}">
                                 <a href="{{ route('savings.index') }}"><i class="ti-layout-sidebar-left"></i><span>Savings Amount</span></a>
                             </li>
+                            @can('view members')
+                                <li class="{{ request()->routeIs('withdrawals.*') ? 'active' : '' }}">
+                                    <a href="{{ route('withdrawals.index') }}"><i class="ti-layout-sidebar-left"></i><span>Withdrawals</span></a>
+                                </li>
+                            @endcan
                             <li class="{{ request()->routeIs('investments.*') ? 'active' : '' }}">
                                 <a href="{{ route('investments.index') }}"><i class="ti-layout-sidebar-left"></i><span>Investments</span></a>
                                 <ul class="collapse">
